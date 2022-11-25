@@ -1,0 +1,63 @@
+@import "./variables";
+
+@mixin icon-hover-effect {
+    transition: .5s linear;
+    
+        &:hover {
+            color: #FCD9B8;
+        }
+}
+
+.contacts-links {
+    text-align: center;
+    padding-top: 1.4375rem;
+    padding-left: 3rem;
+    h4 {
+        font-size: 1.625rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        text-decoration: underline;
+        cursor: pointer;
+        @include text-hover;
+    }
+   ul {
+    display: inline-block;
+    text-align: left;
+
+    li {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        a {
+            text-decoration: none;
+            color: #000;
+            display: flex;
+            align-items: center;
+            transition: 0.5s linear;
+            &:hover {
+                color: var(--base-color);
+            }
+            i {
+                transition: .5s linear;
+                @include icon-hover-effect();
+            }
+        }
+
+        i {
+            color: var(--base-color);
+            font-size: 1.5rem;
+            margin-right: 0.6875rem;
+            @include icon-hover-effect;        }
+    }
+   }
+
+}
+//adjusting elements to march the design
+#links {
+    margin-left: -120px;
+}
+.links {
+    margin-top: 2.375rem;
+}
+

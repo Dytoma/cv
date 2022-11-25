@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+@import "./general-info";
+
+@import "./contacts";
+
+@import "./variables";
+
+@import "./education";
+
+@import "./hobbies";
+
+@import "./technical-skills";
+
+@mixin section-layout {
+    background-color: var(--section-color);
+    border-radius: var(--section-border-radius);
+}
+@mixin hover-effect {
+    transition: .5s linear;
+    
+        &:hover {
+            transform: scale(1.02);
+        }
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    width: var(--paper-layout);
+    height: var(--paper-layout);
+    box-shadow: 0 9px 46px 12px rgba($color: #000000, $alpha: 0.12);
+    padding: 1.875rem;
+    display: grid;
+    grid-template-columns: 18.75rem 1fr ;
+    grid-template-rows: 12.69rem 12.6875rem auto 12.6875rem;
+    row-gap: 1.875rem;
+    column-gap: 2.5rem;
+    margin: 100px auto;
+}
+
+//responsive for mobile phone
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 80vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .general-info {
+        grid-row: 1 / 2;
+    }
+    .contacts-links {
+        grid-row: 2 / 3;
+    }
+    .technical-skills {
+        grid-row: 3 / 4;
+    }
+    .education-experience {
+        grid-row: 4 / 5;
+    }
+    .hobbies {
+        grid-row: 5 / 6;
+    }
+}
+
+//styling the sections of the cv
+
+.general-info {
+    //@include section(58.75rem, 12.69rem);
+    background-color: var(--section-color);
+    border-radius: var(--section-border-radius);
+    grid-column: 1 / 3;
+    @include hover-effect();
+}
+
+.contacts-links {
+    @include section-layout();
+    grid-row: 2 / 4;
+    @include hover-effect();
+}
+.technical-skills {
+    @include section-layout();
+    grid-column: 2 / 3;
+    @include hover-effect();
+}
+.education-experience {
+    @include section-layout();
+    grid-row: 3 / 5;
+    @include hover-effect();
+}
+.hobbies {
+    @include section-layout();
+    background-color: var(--base-color);
+    @include hover-effect();
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--base-color);
+    cursor: pointer;
+    transition: .3s linear;
+    &:hover {
+        color: var(--section-color);
+    }
+}
+
+//responsive for a device with width between 768px and 1000px
+@media only screen and (max-width: 1000px) {
+    .container {
+        width: 90vw;
+        grid-template-columns: 1fr 50%;
+        grid-template-rows: 12.69rem 12.6875rem auto 12.6875rem;
+    }
+    .general-info {
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}

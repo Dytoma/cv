@@ -1,0 +1,85 @@
+@import "./variables";
+
+
+@mixin scale-down {
+    width: 135px !important;
+    height: 4px !important;
+}
+.technical-skills {
+    padding-top: 1.4375rem;
+    padding-left: 2.9375rem;
+    padding-right: 4.875rem;
+
+    .skill {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.9375rem;
+    }
+    h3 {
+        font-size: 1.625rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        text-decoration: underline;
+        cursor: pointer;
+        @include text-hover;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .technical-skills {
+        padding-left: 3rem;
+        padding-right: 0;
+
+        h3 {
+            text-align: center;
+        }
+    }
+    .skill {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        
+        p {
+            text-align: center;
+        }
+        .svg {
+            //margin: 10px auto;
+            //margin-left: 3rem;
+            justify-self: flex-end;
+            .rect1 {
+                @include  scale-down();
+            }
+            .rect2 {
+                width: 34px !important;
+                height: 4px !important;
+            }
+        }
+    }
+
+    .rect3 {
+        @include scale-down();
+    }
+    .rect4 {
+        width: 101px !important;
+        height: 4px !important;
+    }
+
+    .rect5 {
+        @include scale-down();
+    }
+    
+    .rect6 {
+        width: 95px !important;
+        height: 4px !important;
+    }
+
+    .rect7 {
+        @include scale-down();
+    }
+    
+    .rect8 {
+        width: 122px !important;
+        height: 4px !important;
+    }
+}
